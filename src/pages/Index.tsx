@@ -15,6 +15,9 @@ const Index = () => {
         <Projects />
         <Contact />
       </main>
+      <footer className="py-6 text-center text-muted-foreground">
+        <p>© {new Date().getFullYear()} Portfolio. All rights reserved.</p>
+      </footer>
     </div>
   );
 };
