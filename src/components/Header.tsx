@@ -12,17 +12,17 @@ export function Header() {
   const socialLinks = [
     { 
       icon: Github, 
-      href: "https://github.com", 
+      href: "https://github.com/Mohan-Sai-Yeadla", 
       label: "GitHub" 
     },
     { 
       icon: Linkedin, 
-      href: "https://linkedin.com", 
+      href: "https://www.linkedin.com/in/venkata-sai-mohan-yedla/", 
       label: "LinkedIn" 
     },
     { 
       icon: Mail, 
-      href: "mailto:your.email@example.com", 
+      href: "mailto:mohansaiy123@gmail.com", 
       label: "Email" 
     },
   ];
@@ -31,7 +31,7 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b">
       <div className="container flex items-center justify-between h-16">
         <a href="#" className="text-lg font-semibold">
-          Your Name
+          Venkata Sai Mohan Yedla
         </a>
         <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (

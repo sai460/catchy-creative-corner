@@ -5,21 +5,21 @@ export function Contact() {
   const socialLinks = [
     {
       icon: Mail,
-      href: "mailto:your.email@example.com",
+      href: "mailto:mohansaiy123@gmail.com",
       label: "Email",
-      text: "your.email@example.com",
+      text: "mohansaiy123@gmail.com",
     },
     {
       icon: Github,
-      href: "https://github.com",
+      href: "https://github.com/Mohan-Sai-Yeadla",
       label: "GitHub",
-      text: "github.com/yourusername",
+      text: "github.com/Mohan-Sai-Yeadla",
     },
     {
       icon: Linkedin,
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/venkata-sai-mohan-yedla/",
       label: "LinkedIn",
-      text: "linkedin.com/in/yourusername",
+      text: "linkedin.com/in/venkata-sai-mohan-yedla",
     },
   ];
 
