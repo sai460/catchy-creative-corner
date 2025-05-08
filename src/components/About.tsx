@@ -18,7 +18,7 @@ export function About() {
                   <AvatarImage 
                     src="/lovable-uploads/5c08b9d2-5006-4ea4-b994-3dd994281d77.png" 
                     alt="Venkata Sai Mohan Yedla"
-                    className="object-cover object-center scale-[1.2]"
+                    className="object-cover object-center"
                   />
                   <AvatarFallback className="text-2xl bg-turquoise text-white">VSM</AvatarFallback>
                 </Avatar>
