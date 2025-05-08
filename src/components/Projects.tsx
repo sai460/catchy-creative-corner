@@ -29,14 +29,14 @@ export function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="py-20 bg-secondary/5">
       <div className="container max-w-5xl">
-        <h2 className="text-3xl font-bold mb-10">Featured Projects</h2>
+        <h2 className="text-3xl font-bold mb-10 text-classicBlue">Featured Projects</h2>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
-            <Card key={index} className="overflow-hidden border border-secondary hover:border-primary transition-all duration-300 h-full flex flex-col">
-              <CardHeader className="pb-3">
-                <CardTitle>{project.title}</CardTitle>
+            <Card key={index} className="project-card overflow-hidden border h-full flex flex-col">
+              <CardHeader className="pb-3 border-b border-secondary/20">
+                <CardTitle className="text-classicBlue">{project.title}</CardTitle>
                 <CardDescription className="pt-2">{project.description}</CardDescription>
               </CardHeader>
               <CardContent className="mt-auto">
@@ -44,19 +44,19 @@ export function Projects() {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2 py-1 text-xs bg-secondary text-secondary-foreground rounded-md"
+                      className="px-2 py-1 text-xs bg-secondary/20 text-foreground rounded-md"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
                 <div className="flex gap-3">
-                  <Button asChild variant="default" size="sm" className="flex-1">
+                  <Button asChild variant="default" size="sm" className="flex-1 bg-classicBlue hover:bg-turquoise">
                     <a href={project.link} target="_blank" rel="noopener noreferrer">
                       Live Demo
                     </a>
                   </Button>
-                  <Button asChild variant="outline" size="sm" className="w-10 px-0">
+                  <Button asChild variant="outline" size="sm" className="w-10 px-0 border-classicBlue text-classicBlue hover:text-turquoise">
                     <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
                       <Github className="h-4 w-4" />
                     </a>

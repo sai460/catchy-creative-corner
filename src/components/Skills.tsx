@@ -54,21 +54,21 @@ export function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-primary/5">
+    <section id="skills" className="py-20 bg-white">
       <div className="container max-w-5xl">
-        <h2 className="text-3xl font-bold mb-12 text-center">Skills & Technologies</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center text-classicBlue">Skills & Technologies</h2>
         
         <div className="space-y-12">
           {skills.map((skillGroup, idx) => (
             <div key={idx} className="animate-fade-in" style={{ animationDelay: `${idx * 0.1}s` }}>
-              <h3 className="text-xl font-semibold mb-6">{skillGroup.category}</h3>
+              <h3 className="text-xl font-semibold mb-6 text-turquoise">{skillGroup.category}</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {skillGroup.items.map((skill, skillIdx) => (
                   <div 
                     key={skillIdx}
-                    className="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
+                    className="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border border-secondary/20 hover:border-classicBlue"
                   >
-                    <div className="mb-3 text-primary">
+                    <div className="mb-3 text-turquoise hover:text-classicBlue transition-colors">
                       {skill.icon}
                     </div>
                     <span className="text-sm font-medium">{skill.name}</span>

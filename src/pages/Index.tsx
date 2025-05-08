@@ -17,7 +17,7 @@ const Index = () => {
         <Projects />
         <Contact />
       </main>
-      <footer className="py-8 text-center text-muted-foreground bg-background border-t">
+      <footer className="py-8 text-center text-white bg-classicBlue">
         <div className="container">
           <p>© {new Date().getFullYear()} Venkata Sai Mohan Yedla. All rights reserved.</p>
         </div>

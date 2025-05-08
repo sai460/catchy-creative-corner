@@ -8,30 +8,30 @@ export function Hero() {
       icon: Github, 
       href: "https://github.com/Mohan-Sai-Yeadla", 
       label: "GitHub",
-      color: "text-black"
+      color: "text-foreground hover:text-classicBlue"
     },
     { 
       icon: Linkedin, 
       href: "https://www.linkedin.com/in/venkata-sai-mohan-yedla/", 
       label: "LinkedIn",
-      color: "text-blue-600" 
+      color: "text-classicBlue hover:text-turquoise" 
     },
     { 
       icon: Mail, 
       href: "mailto:mohansaiy123@gmail.com", 
       label: "Email",
-      color: "text-red-500"
+      color: "text-turquoise hover:text-classicBlue"
     },
   ];
 
   return (
-    <section className="min-h-[90vh] flex flex-col justify-center pt-20">
+    <section className="min-h-[90vh] flex flex-col justify-center pt-20 hero-gradient">
       <div className="container max-w-5xl">
         <div className="space-y-6">
-          <h1 className="text-4xl md:text-7xl font-bold animate-fade-in">
+          <h1 className="text-4xl md:text-7xl font-bold animate-fade-in text-classicBlue">
             Venkata Sai Mohan Yedla
           </h1>
-          <p className="text-xl md:text-3xl text-muted-foreground animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <p className="text-xl md:text-3xl text-turquoise animate-fade-in" style={{ animationDelay: "0.2s" }}>
             Software Engineer & DevOps Engineer
           </p>
           <p className="max-w-2xl text-muted-foreground text-lg animate-fade-in" style={{ animationDelay: "0.4s" }}>
@@ -55,7 +55,7 @@ export function Hero() {
 
           <div className="pt-6 animate-fade-in" style={{ animationDelay: "0.8s" }}>
             <a href="#projects">
-              <Button className="group">
+              <Button className="group bg-classicBlue hover:bg-turquoise">
                 View My Work
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>

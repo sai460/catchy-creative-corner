@@ -40,6 +40,9 @@ export default {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
+        classicBlue: "#1EAEDB",
+        turquoise: "#33C3F0",
+        gold: "#FFD700",
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],
