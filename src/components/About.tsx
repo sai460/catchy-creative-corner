@@ -9,7 +9,7 @@ export function About() {
         <div className="flex flex-col md:flex-row gap-8 items-center">
           <div className="flex-shrink-0">
             <Avatar className="h-48 w-48 border-4 border-classicBlue shadow-lg">
-              <AvatarImage src="/profile-photo.jpg" alt="Venkata Sai Mohan Yedla" />
+              <AvatarImage src="/lovable-uploads/344c0732-4581-4a7e-b13f-bc5cc7fbccca.png" alt="Venkata Sai Mohan Yedla" />
               <AvatarFallback className="text-2xl bg-turquoise text-white">VSM</AvatarFallback>
             </Avatar>
           </div>
