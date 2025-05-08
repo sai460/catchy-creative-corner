@@ -66,6 +66,22 @@
   }
 }
 
+.skill-card {
+  @apply bg-white rounded-lg p-4 flex flex-col items-center justify-center transition-all duration-300;
+}
+
+.skill-card:hover {
+  @apply shadow-lg transform -translate-y-1;
+}
+
+.skill-icon {
+  @apply text-primary mb-3 transition-transform duration-300;
+}
+
+.skill-card:hover .skill-icon {
+  @apply transform scale-110;
+}
+
 /* Remove default App.css styles that might conflict */
 #root {
   max-width: 100%;
