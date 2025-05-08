@@ -1,7 +1,6 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
-import { useEffect } from "react";
 
 export function Hero() {
   const socialLinks = [
@@ -28,7 +27,7 @@ export function Hero() {
   return (
     <section className="min-h-[90vh] flex flex-col justify-center pt-10 pb-20 hero-gradient relative overflow-hidden">
       <div className="absolute inset-0 z-0 devops-animation-bg">
-        {/* We've removed the DevOps Icons and Connection Lines */}
+        {/* Background animation removed as requested */}
       </div>
     
       <div className="container max-w-5xl relative z-10">

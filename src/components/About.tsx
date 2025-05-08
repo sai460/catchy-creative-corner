@@ -8,10 +8,13 @@ export function About() {
         <h2 className="text-3xl font-bold mb-8 text-classicBlue">About Me</h2>
         <div className="flex flex-col md:flex-row gap-8 items-center">
           <div className="flex-shrink-0">
-            <Avatar className="h-48 w-48 border-4 border-classicBlue shadow-lg">
-              <AvatarImage src="/lovable-uploads/556ee588-4085-4796-88f5-6dd8f2cbbad8.png" alt="Venkata Sai Mohan Yedla" />
-              <AvatarFallback className="text-2xl bg-turquoise text-white">VSM</AvatarFallback>
-            </Avatar>
+            <div className="relative">
+              <Avatar className="h-48 w-48 border-4 border-classicBlue shadow-lg">
+                <AvatarImage src="/lovable-uploads/5c08b9d2-5006-4ea4-b994-3dd994281d77.png" alt="Venkata Sai Mohan Yedla" />
+                <AvatarFallback className="text-2xl bg-turquoise text-white">VSM</AvatarFallback>
+              </Avatar>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-classicBlue/30 to-transparent opacity-60"></div>
+            </div>
           </div>
           <div className="space-y-6 text-lg">
             <p className="text-foreground">
