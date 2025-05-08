@@ -52,7 +52,7 @@
 
 .animate-fade-in {
   opacity: 0;
-  animation: fadeIn 0.5s ease-out forwards;
+  animation: fadeIn 0.8s ease-out forwards;
 }
 
 @keyframes fadeIn {
@@ -64,4 +64,12 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Remove default App.css styles that might conflict */
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
 }

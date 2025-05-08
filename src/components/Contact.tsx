@@ -1,5 +1,6 @@
 
 import { Github, Linkedin, Mail } from "lucide-react";
+import { Button } from "./ui/button";
 
 export function Contact() {
   const socialLinks = [
@@ -24,26 +25,36 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="section">
-      <div className="container">
-        <h2 className="text-2xl font-semibold mb-8">Get In Touch</h2>
-        <div className="max-w-md">
-          <p className="text-muted-foreground mb-8">
+    <section id="contact" className="py-20 bg-secondary/30">
+      <div className="container max-w-5xl">
+        <h2 className="text-3xl font-bold mb-8">Get In Touch</h2>
+        <div className="max-w-lg">
+          <p className="text-lg text-muted-foreground mb-8">
             I'm always open to new opportunities and collaborations. Feel free to reach out!
           </p>
-          <div className="space-y-4">
+          <div className="space-y-6">
             {socialLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors"
+                className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors group"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <link.icon className="h-5 w-5" />
-                <span>{link.text}</span>
+                <div className="bg-background p-3 rounded-full border border-border group-hover:border-primary transition-colors">
+                  <link.icon className="h-5 w-5" />
+                </div>
+                <span className="text-lg">{link.text}</span>
               </a>
             ))}
+          </div>
+          
+          <div className="mt-12">
+            <Button asChild size="lg">
+              <a href="mailto:mohansaiy123@gmail.com">
+                Send me an email
+              </a>
+            </Button>
           </div>
         </div>
       </div>
