@@ -46,19 +46,29 @@ export function Header() {
   }, [scrolled, navItems]);
 
   return (
-    <header className={cn(
-      "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-      scrolled ? "bg-background/90 backdrop-blur-lg shadow-sm" : "bg-transparent"
-    )}>
+    <motion.header 
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        scrolled ? "bg-background/90 backdrop-blur-lg shadow-sm" : "bg-transparent"
+      )}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+    >
       <div className="container max-w-5xl flex items-center justify-between h-16">
-        <a href="#" className={cn(
-          "text-xl font-bold transition-colors",
-          scrolled ? "text-classicBlue" : "text-classicBlue"
-        )}>
+        <motion.a 
+          href="#" 
+          className={cn(
+            "text-xl font-bold transition-colors",
+            scrolled ? "text-classicBlue" : "text-classicBlue"
+          )}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
           VSM
-        </a>
+        </motion.a>
         <nav className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
+          {navItems.map((item, index) => (
             <motion.a
               key={item.name}
               href={item.href}
@@ -72,7 +82,12 @@ export function Header() {
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: navItems.indexOf(item) * 0.1 }}
+              transition={{ 
+                duration: 0.3, 
+                delay: index * 0.1,
+                type: "spring",
+                stiffness: 300
+              }}
             >
               {item.name}
               {activeSection === item.href.substring(1) && (
@@ -88,6 +103,6 @@ export function Header() {
           ))}
         </nav>
       </div>
-    </header>
+    </motion.header>
   );
 }

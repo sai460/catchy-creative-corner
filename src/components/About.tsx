@@ -9,11 +9,11 @@ export function About() {
         <div className="flex flex-col md:flex-row gap-8 items-center">
           <div className="flex-shrink-0">
             <div className="relative">
-              <Avatar className="h-48 w-48 border-4 border-classicBlue shadow-lg">
+              <Avatar className="h-48 w-48 border-4 border-classicBlue shadow-lg overflow-hidden">
                 <AvatarImage 
                   src="/lovable-uploads/5c08b9d2-5006-4ea4-b994-3dd994281d77.png" 
                   alt="Venkata Sai Mohan Yedla"
-                  className="object-cover"
+                  className="object-cover scale-125 object-center"
                 />
                 <AvatarFallback className="text-2xl bg-turquoise text-white">VSM</AvatarFallback>
               </Avatar>
