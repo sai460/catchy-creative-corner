@@ -7,7 +7,7 @@ export function Hero() {
   const socialLinks = [
     { 
       icon: Github, 
-      href: "https://github.com/Mohan-Sai-Yeadla", 
+      href: "https://github.com/sai460/", 
       label: "GitHub",
       color: "text-foreground hover:text-classicBlue"
     },
@@ -19,7 +19,7 @@ export function Hero() {
     },
     { 
       icon: Mail, 
-      href: "mailto:mohansaiy123@gmail.com", 
+      href: "mailto:saimohan.yedla@outlook.com", 
       label: "Email",
       color: "text-turquoise hover:text-classicBlue"
     },
