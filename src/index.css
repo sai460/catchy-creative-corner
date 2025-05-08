@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -66,133 +65,9 @@
   }
 }
 
-/* Hero section animations and styles */
+/* Hero section gradient */
 .hero-gradient {
   background: linear-gradient(135deg, rgba(30, 174, 219, 0.05) 0%, rgba(255, 255, 255, 0.03) 100%);
-}
-
-/* DevOps Icons Animation in Hero */
-.devops-animation-bg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.devops-icon {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: white;
-  font-size: 12px;
-  font-weight: 500;
-  z-index: 5;
-  transition: all 0.3s ease;
-}
-
-.devops-icon:hover {
-  transform: scale(1.1);
-  background-color: rgba(30, 174, 219, 0.2);
-}
-
-.devops-icon span {
-  margin-top: 5px;
-}
-
-.code-icon {
-  top: 15%;
-  left: 10%;
-}
-
-.build-icon {
-  top: 20%;
-  left: 30%;
-}
-
-.test-icon {
-  top: 15%;
-  right: 30%;
-}
-
-.deploy-icon {
-  top: 20%;
-  right: 10%;
-}
-
-.monitor-icon {
-  bottom: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.devops-connect {
-  position: absolute;
-  height: 2px;
-  background-color: rgba(255, 255, 255, 0.2);
-  z-index: 2;
-}
-
-.devops-connect.active {
-  background: linear-gradient(90deg, #1EAEDB, #33C3F0);
-  box-shadow: 0 0 10px rgba(51, 195, 240, 0.6);
-  animation: pulse 1.5s ease-out;
-}
-
-.code-to-build {
-  width: 160px;
-  top: 20%;
-  left: 14%;
-  transform: rotate(10deg);
-}
-
-.build-to-test {
-  width: 320px;
-  top: 22%;
-  left: 34%;
-}
-
-.test-to-deploy {
-  width: 160px;
-  top: 20%;
-  right: 14%;
-  transform: rotate(-10deg);
-}
-
-.deploy-to-monitor {
-  width: 180px;
-  top: 28%;
-  right: 16%;
-  transform: rotate(45deg);
-}
-
-.monitor-to-code {
-  width: 180px;
-  bottom: 30%;
-  left: 16%;
-  transform: rotate(-45deg);
-}
-
-@keyframes pulse {
-  0% {
-    opacity: 0.8;
-    height: 2px;
-  }
-  50% {
-    opacity: 1;
-    height: 3px;
-  }
-  100% {
-    opacity: 0.8;
-    height: 2px;
-  }
 }
 
 /* Skills section styles */
@@ -330,6 +205,30 @@
   text-align: left;
 }
 
+/* Education section styles */
+.education-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.education-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1EAEDB, #33C3F0);
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.education-card:hover::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .devops-pipeline {
@@ -355,4 +254,3 @@
     padding: 15px;
   }
 }
-
