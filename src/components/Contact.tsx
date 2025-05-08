@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "./ui/button";
@@ -22,19 +21,16 @@ export function Contact() {
       icon: Mail,
       href: "mailto:saimohan.yedla@outlook.com",
       label: "Email",
-      text: "saimohan.yedla@outlook.com",
     },
     {
       icon: Github,
       href: "https://github.com/sai460/",
       label: "GitHub",
-      text: "github.com/sai460",
     },
     {
       icon: Linkedin,
       href: "https://www.linkedin.com/in/venkata-sai-mohan-yedla/",
       label: "LinkedIn",
-      text: "linkedin.com/in/venkata-sai-mohan-yedla",
     },
   ];
 
@@ -109,19 +105,17 @@ export function Contact() {
               I'm always open to new opportunities and collaborations. Feel free to reach out!
             </p>
             
-            <div className="space-y-6">
+            <div className="flex space-x-6 my-8">
               {socialLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="flex items-center gap-4 text-foreground hover:text-classicBlue transition-colors group"
+                  className="flex items-center justify-center w-12 h-12 bg-white rounded-full border border-secondary/20 hover:border-classicBlue transition-all hover:scale-110 shadow-sm hover:shadow-md"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={link.label}
                 >
-                  <div className="bg-white p-3 rounded-full border border-secondary/20 group-hover:border-classicBlue transition-colors">
-                    <link.icon className="h-5 w-5 text-turquoise" />
-                  </div>
-                  <span className="text-lg">{link.text}</span>
+                  <link.icon className="h-6 w-6 text-turquoise" />
                 </a>
               ))}
             </div>

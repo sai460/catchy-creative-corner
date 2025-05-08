@@ -1,13 +1,35 @@
 
 import { GraduationCap } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function Education() {
   return (
     <section id="education" className="py-20 bg-gradient-to-br from-white to-secondary/5">
       <div className="container max-w-5xl">
-        <h2 className="text-3xl font-bold mb-8 text-classicBlue">Education</h2>
+        <div className="flex items-center gap-3 mb-8">
+          <h2 className="text-3xl font-bold text-classicBlue">Education</h2>
+          <motion.div
+            initial={{ rotate: 0 }}
+            animate={{ rotate: [0, 15, -15, 0] }}
+            transition={{ 
+              repeat: Infinity, 
+              duration: 2.5,
+              repeatType: "loop",
+              ease: "easeInOut"
+            }}
+          >
+            <GraduationCap className="h-8 w-8 text-classicBlue" />
+          </motion.div>
+        </div>
+        
         <div className="flex flex-col gap-8">
-          <div className="education-card bg-white/50 p-6 rounded-lg border border-secondary/20 hover:border-classicBlue transition-all duration-300 shadow-sm hover:shadow">
+          <motion.div 
+            className="education-card bg-white/50 p-6 rounded-lg border border-secondary/20 hover:border-classicBlue transition-all duration-300 shadow-sm hover:shadow"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <div className="flex flex-col md:flex-row md:items-center gap-6">
               <div className="flex-shrink-0">
                 <img 
@@ -25,7 +47,7 @@ export function Education() {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

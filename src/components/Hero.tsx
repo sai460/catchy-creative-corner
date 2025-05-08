@@ -48,7 +48,7 @@ export function Hero() {
       <div className="container max-w-5xl relative z-10">
         <div className="space-y-6">
           <motion.h1 
-            className="text-3xl md:text-5xl font-bold text-classicBlue"
+            className="text-2xl md:text-4xl font-bold text-classicBlue"
             initial="hidden"
             animate="visible"
             custom={0}
