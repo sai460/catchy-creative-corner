@@ -11,18 +11,50 @@ export function Education() {
           <motion.div
             initial={{ rotate: 0 }}
             animate={{ 
-              rotate: [0, 15, -15, 0],
+              rotate: [0, 15, 0, -15, 0],
               y: [0, -5, 0]
             }}
             transition={{ 
               repeat: Infinity, 
-              duration: 2.5,
+              duration: 4,
               repeatType: "loop",
               ease: "easeInOut"
             }}
-            className="bg-classicBlue/10 rounded-full p-2"
+            className="relative"
           >
-            <GraduationCap className="h-8 w-8 text-classicBlue" />
+            <div className="bg-classicBlue/10 rounded-full p-2">
+              <GraduationCap className="h-8 w-8 text-classicBlue" />
+            </div>
+            <motion.div 
+              className="absolute -top-2 -right-1 w-4 h-4 bg-gold rounded-full"
+              animate={{
+                y: [-2, -8, -2],
+                opacity: [0.7, 1, 0.7],
+                scale: [1, 1.2, 1]
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 2,
+                repeatType: "loop",
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div 
+              className="absolute -bottom-1 -left-1 w-3 h-3 bg-turquoise rounded-full"
+              animate={{
+                y: [0, 4, 0],
+                x: [0, -4, 0],
+                opacity: [0.5, 1, 0.5],
+                scale: [1, 1.3, 1]
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 3,
+                repeatType: "loop",
+                ease: "easeInOut",
+                delay: 0.5
+              }}
+            />
           </motion.div>
         </div>
         
