@@ -45,7 +45,7 @@ export function Experience() {
               <div>
                 <h3 className="text-xl font-semibold text-classicBlue">Wipro Limited</h3>
                 <p className="text-turquoise font-medium">DevOps Engineer</p>
-                <p className="text-muted-foreground mt-1">Jan 2022 - Present</p>
+                <p className="text-muted-foreground mt-1">Aug 2020 - Dec 2024</p>
                 <div className="mt-4 space-y-2">
                   <p className="text-sm text-muted-foreground">
                     • Designed and implemented CI/CD pipelines using Jenkins and GitHub Actions
