@@ -43,7 +43,7 @@ export function Testimonials() {
       position: "Team Member",
       message: "Mohan is not only technically skilled but also incredibly supportive as a teammate. Whether it was debugging tricky deployment issues or optimizing infrastructure, he always ensured the team moved forward smoothly. His positive energy and dedication made working together a great experience.",
       date: "April 20, 2025", 
-      image: '/lovable-uploads/5c08b9d2-5006-4ea4-b994-3dd994281d77.png'
+      image: '/lovable-uploads/344c0732-4581-4a7e-b13f-bc5cc7fbccca.png'
     }
   ];
 

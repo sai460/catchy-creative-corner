@@ -37,7 +37,7 @@ export function Experience() {
             <div className="flex flex-col md:flex-row md:items-center gap-6">
               <div className="flex-shrink-0">
                 <img 
-                  src="/lovable-uploads/086fd7cb-3365-4ed4-871f-24d0593ed05e.png" 
+                  src="/lovable-uploads/a3cc323c-079d-4570-a214-1d6df16e243d.png" 
                   alt="Wipro Limited logo" 
                   className="w-24 h-24 object-contain"
                 />
