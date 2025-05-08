@@ -8,17 +8,17 @@ export function About() {
       <div className="container max-w-5xl">
         <h2 className="text-3xl font-bold mb-8 text-classicBlue">About Me</h2>
         <div className="flex flex-col md:flex-row gap-8 items-center">
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 flex justify-center w-full md:w-auto">
             <div className="relative">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <Avatar className="h-48 w-48 border-4 border-classicBlue shadow-lg overflow-hidden">
+                <Avatar className="h-48 w-48 border-4 border-classicBlue shadow-lg overflow-hidden mx-auto">
                   <AvatarImage 
                     src="/lovable-uploads/5c08b9d2-5006-4ea4-b994-3dd994281d77.png" 
                     alt="Venkata Sai Mohan Yedla"
-                    className="object-cover scale-[1.7] object-top"
+                    className="object-cover object-center scale-[1.2]"
                   />
                   <AvatarFallback className="text-2xl bg-turquoise text-white">VSM</AvatarFallback>
                 </Avatar>
