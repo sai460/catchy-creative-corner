@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, Download, Github, Linkedin, Mail, UserRound } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function Hero() {
@@ -48,7 +48,7 @@ export function Hero() {
       <div className="container max-w-5xl relative z-10">
         <div className="space-y-6">
           <motion.h1 
-            className="text-2xl md:text-4xl font-bold text-classicBlue"
+            className="text-xl md:text-3xl font-bold text-classicBlue"
             initial="hidden"
             animate="visible"
             custom={0}
@@ -84,7 +84,7 @@ export function Hero() {
             custom={3}
             variants={textVariants}
           >
-            {socialLinks.map((link, index) => (
+            {socialLinks.map((link) => (
               <motion.a
                 key={link.label}
                 href={link.href}
@@ -101,16 +101,23 @@ export function Hero() {
           </motion.div>
 
           <motion.div 
-            className="pt-6"
+            className="pt-6 flex flex-wrap gap-4"
             initial="hidden"
             animate="visible"
             custom={4}
             variants={textVariants}
           >
-            <a href="#projects">
-              <Button className="group bg-classicBlue hover:bg-turquoise">
-                View My Work
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            <a href="#contact">
+              <Button variant="default" className="group bg-classicBlue hover:bg-turquoise text-white font-medium px-6 py-6 h-12 rounded-full flex items-center">
+                <UserRound className="mr-2 h-5 w-5" />
+                CONTACT ME
+              </Button>
+            </a>
+            
+            <a href="https://raw.githubusercontent.com/sai460/resume/main/resume.pdf" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" className="group border-2 border-turquoise text-turquoise hover:bg-turquoise hover:text-white font-medium px-6 py-6 h-12 rounded-full flex items-center">
+                <Download className="mr-2 h-5 w-5" />
+                GET RESUME
               </Button>
             </a>
           </motion.div>

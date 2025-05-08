@@ -10,13 +10,17 @@ export function Education() {
           <h2 className="text-3xl font-bold text-classicBlue">Education</h2>
           <motion.div
             initial={{ rotate: 0 }}
-            animate={{ rotate: [0, 15, -15, 0] }}
+            animate={{ 
+              rotate: [0, 15, -15, 0],
+              y: [0, -5, 0]
+            }}
             transition={{ 
               repeat: Infinity, 
               duration: 2.5,
               repeatType: "loop",
               ease: "easeInOut"
             }}
+            className="bg-classicBlue/10 rounded-full p-2"
           >
             <GraduationCap className="h-8 w-8 text-classicBlue" />
           </motion.div>

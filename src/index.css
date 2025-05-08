@@ -254,3 +254,25 @@
     padding: 15px;
   }
 }
+
+/* New navigation styling */
+.tabs-navigation {
+  @apply flex justify-center w-full;
+}
+
+.tabs-navigation button {
+  @apply uppercase text-sm md:text-base font-medium px-4 py-2 transition-colors duration-300;
+}
+
+.tabs-navigation button[data-state="active"] {
+  @apply text-classicBlue relative;
+}
+
+/* Button styling */
+.contact-button {
+  @apply bg-classicBlue hover:bg-turquoise text-white font-medium px-6 py-2 rounded-full transition-all duration-300 flex items-center gap-2;
+}
+
+.resume-button {
+  @apply border-2 border-turquoise text-turquoise hover:bg-turquoise hover:text-white font-medium px-6 py-2 rounded-full transition-all duration-300 flex items-center gap-2;
+}
