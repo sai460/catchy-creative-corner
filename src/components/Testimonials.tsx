@@ -48,9 +48,45 @@ export function Testimonials() {
   ];
 
   return (
-    <section id="testimonials" className="py-20 bg-gradient-to-br from-secondary/5 to-white">
-      <div className="container max-w-5xl">
-        <div className="flex items-center gap-3 mb-12">
+    <section id="testimonials" className="py-20 relative overflow-hidden bg-gradient-to-br from-classicBlue/5 to-gold/5">
+      {/* Background animation elements */}
+      <div className="absolute inset-0 z-0">
+        <motion.div 
+          className="absolute top-20 right-40 w-60 h-60 rounded-full bg-classicBlue/5"
+          animate={{
+            scale: [1, 1.1, 1],
+            x: [0, -10, 0],
+            y: [0, -10, 0],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 7,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div 
+          className="absolute bottom-20 left-20 w-72 h-72 rounded-full bg-turquoise/5"
+          animate={{
+            scale: [1.1, 1, 1.1],
+            opacity: [0.2, 0.4, 0.2],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 8,
+            ease: "easeInOut",
+          }}
+        />
+      </div>
+
+      <div className="container max-w-5xl relative z-10">
+        <motion.div 
+          className="flex items-center gap-3 mb-12"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-3xl font-bold text-classicBlue">Testimonials</h2>
           <motion.div
             initial={{ scale: 1 }}
@@ -64,28 +100,39 @@ export function Testimonials() {
               repeatType: "loop",
               ease: "easeInOut"
             }}
-            className="bg-classicBlue/10 rounded-full p-2"
+            className="bg-classicBlue/10 rounded-full p-2 shadow-md"
           >
             <Quote className="h-8 w-8 text-classicBlue" />
           </motion.div>
-        </div>
+        </motion.div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial) => (
+          {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: testimonial.id * 0.1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ 
+                duration: 0.6, 
+                delay: index * 0.15,
+                type: "spring",
+                stiffness: 50
+              }}
+              whileHover={{ 
+                y: -5,
+                transition: { duration: 0.2 } 
+              }}
             >
-              <Card className="h-full bg-white/70 backdrop-blur-sm border-secondary/20 hover:border-classicBlue transition-all duration-300">
+              <Card className="h-full bg-white/80 backdrop-blur-sm border-secondary/20 hover:border-classicBlue transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-classicBlue/10">
                 <CardHeader className="pb-2">
                   <div className="flex items-center gap-4">
-                    <Avatar className="h-12 w-12 border-2 border-classicBlue/30">
-                      <AvatarImage src={testimonial.image} alt={testimonial.name} />
-                      <AvatarFallback>{testimonial.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                    </Avatar>
+                    <motion.div whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}>
+                      <Avatar className="h-12 w-12 border-2 border-classicBlue/30 shadow-md">
+                        <AvatarImage src={testimonial.image} alt={testimonial.name} />
+                        <AvatarFallback>{testimonial.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                      </Avatar>
+                    </motion.div>
                     <div>
                       <CardTitle className="text-lg text-classicBlue">{testimonial.name}</CardTitle>
                       <CardDescription className="text-turquoise">{testimonial.position}</CardDescription>

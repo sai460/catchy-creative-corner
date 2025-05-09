@@ -8,8 +8,11 @@ import { Skills } from "@/components/Skills";
 import { Projects } from "@/components/Projects";
 import { Testimonials } from "@/components/Testimonials";
 import { Contact } from "@/components/Contact";
+import { motion } from "framer-motion";
 
 const Index = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -23,9 +26,35 @@ const Index = () => {
         <Testimonials />
         <Contact />
       </main>
-      <footer className="py-8 text-center text-white bg-classicBlue">
-        <div className="container">
-          <p>© {new Date().getFullYear()} Venkata Sai Mohan Yedla. All rights reserved.</p>
+      <footer className="py-8 text-center text-white bg-gradient-to-r from-classicBlue to-turquoise relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <motion.div 
+            className="absolute top-0 left-1/4 w-32 h-32 rounded-full bg-white/10"
+            animate={{
+              y: [0, 30, 0],
+              opacity: [0.3, 0.6, 0.3],
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 8,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div 
+            className="absolute bottom-0 right-1/4 w-40 h-40 rounded-full bg-white/10"
+            animate={{
+              y: [0, -20, 0],
+              opacity: [0.3, 0.5, 0.3],
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 6,
+              ease: "easeInOut",
+            }}
+          />
+        </div>
+        <div className="container relative z-10">
+          <p>© {currentYear} Venkata Sai Mohan Yedla. All rights reserved.</p>
         </div>
       </footer>
     </div>
