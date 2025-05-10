@@ -47,7 +47,7 @@ export function Hero() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
             <motion.h1 
-              className="text-xl md:text-3xl font-bold text-classicBlue"
+              className="text-xl md:text-3xl font-bold bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent shadow-text"
               initial="hidden"
               animate="visible"
               custom={0}
@@ -57,7 +57,7 @@ export function Hero() {
             </motion.h1>
             
             <motion.p 
-              className="text-xl md:text-2xl text-turquoise"
+              className="text-xl md:text-2xl text-turquoise shadow-text"
               initial="hidden"
               animate="visible"
               custom={1}
@@ -67,7 +67,7 @@ export function Hero() {
             </motion.p>
             
             <motion.p 
-              className="max-w-2xl text-muted-foreground text-lg"
+              className="max-w-2xl text-white text-lg bg-black/20 backdrop-blur-sm p-3 rounded-lg border border-white/10"
               initial="hidden"
               animate="visible"
               custom={2}
@@ -122,17 +122,17 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* Enhanced DevOps Automation Animation - Centered and without process labels */}
+          {/* DevOps Automation Animation - Centered */}
           <motion.div 
             className="hidden md:flex justify-center items-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            <div className="relative w-full h-[350px] flex items-center justify-center">
+            <div className="flex items-center justify-center h-full w-full">
               {/* Main circular container */}
               <motion.div 
-                className="absolute w-72 h-72 rounded-full border-2 border-turquoise/30 bg-gradient-to-br from-slate-900/80 to-blue-900/50 backdrop-blur-md"
+                className="relative w-72 h-72 rounded-full border-2 border-turquoise/30 bg-gradient-to-br from-slate-900/80 to-blue-900/50 backdrop-blur-md flex items-center justify-center"
                 animate={{ 
                   boxShadow: ['0 0 15px rgba(51, 195, 240, 0.2)', '0 0 30px rgba(51, 195, 240, 0.4)', '0 0 15px rgba(51, 195, 240, 0.2)'], 
                 }}
