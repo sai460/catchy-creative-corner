@@ -64,19 +64,21 @@ export function About() {
                 transition={{ type: "spring", stiffness: 300 }}
                 className="relative z-10"
               >
-                <Avatar className="h-48 w-48 border-4 border-classicBlue shadow-xl overflow-hidden mx-auto">
+                {/* Increased the size of the Avatar from h-48 w-48 to h-64 w-64 */}
+                <Avatar className="h-64 w-64 border-4 border-classicBlue shadow-xl overflow-hidden mx-auto">
                   <AvatarImage 
                     src="/lovable-uploads/5c08b9d2-5006-4ea4-b994-3dd994281d77.png" 
                     alt="Venkata Sai Mohan Yedla"
                     className="object-cover object-center"
                   />
-                  <AvatarFallback className="text-2xl bg-turquoise text-white">VSM</AvatarFallback>
+                  <AvatarFallback className="text-3xl bg-turquoise text-white">VSM</AvatarFallback>
                 </Avatar>
               </motion.div>
+              {/* Enhanced glow effects for the larger image */}
               <motion.div 
-                className="absolute -inset-1 bg-gradient-to-tr from-classicBlue to-turquoise rounded-full blur-md opacity-30"
+                className="absolute -inset-1 bg-gradient-to-tr from-classicBlue to-turquoise rounded-full blur-md opacity-40"
                 animate={{
-                  opacity: [0.2, 0.5, 0.2],
+                  opacity: [0.3, 0.6, 0.3],
                   scale: [1, 1.05, 1]
                 }}
                 transition={{
@@ -86,7 +88,7 @@ export function About() {
                 }}
               />
               <motion.div
-                className="absolute -inset-4 bg-gradient-to-br from-turquoise/20 to-classicBlue/20 rounded-full blur-lg"
+                className="absolute -inset-6 bg-gradient-to-br from-turquoise/20 to-classicBlue/20 rounded-full blur-lg"
                 animate={{
                   opacity: [0.3, 0.7, 0.3],
                   rotate: [0, 360],
