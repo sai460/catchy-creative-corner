@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -46,15 +47,6 @@
 
   .social-link {
     @apply hover:text-primary transition-colors;
-  }
-  
-  /* Updated text highlight utilities */
-  .shadow-text {
-    text-shadow: 0 1px 3px rgba(0,0,0,0.8), 0 2px 5px rgba(0,0,0,0.4);
-  }
-  
-  .highlight-text {
-    @apply bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded;
   }
 }
 
@@ -291,7 +283,7 @@
   @apply text-classicBlue relative;
 }
 
-/* Updated button styling */
+/* Button styling */
 .contact-button {
   @apply bg-classicBlue hover:bg-turquoise text-white font-medium px-6 py-2 rounded-full transition-all duration-300 flex items-center gap-2;
 }

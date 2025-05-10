@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Download, Github, Linkedin, Mail, UserRound } from "lucide-react";
+import { ArrowRight, Download, Github, Linkedin, Mail, UserRound, Server, Code, GitBranch, CheckCircle, Upload, BarChart } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function Hero() {
@@ -44,11 +44,10 @@ export function Hero() {
       <div className="absolute inset-0 z-0 bg-gradient-to-r from-slate-900/50 to-blue-900/20"></div>
     
       <div className="container max-w-5xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-          {/* Text content taking 7 columns */}
-          <div className="md:col-span-7 space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="space-y-6">
             <motion.h1 
-              className="text-xl md:text-3xl font-bold bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent highlight-text shadow-text"
+              className="text-xl md:text-3xl font-bold text-classicBlue"
               initial="hidden"
               animate="visible"
               custom={0}
@@ -58,7 +57,7 @@ export function Hero() {
             </motion.h1>
             
             <motion.p 
-              className="text-xl md:text-2xl text-turquoise shadow-text highlight-text"
+              className="text-xl md:text-2xl text-turquoise"
               initial="hidden"
               animate="visible"
               custom={1}
@@ -68,7 +67,7 @@ export function Hero() {
             </motion.p>
             
             <motion.p 
-              className="max-w-2xl text-white text-lg highlight-text"
+              className="max-w-2xl text-muted-foreground text-lg"
               initial="hidden"
               animate="visible"
               custom={2}
@@ -123,17 +122,17 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* DevOps Automation Animation - Centered in 5 columns */}
+          {/* Enhanced DevOps Automation Animation - Centered and without process labels */}
           <motion.div 
-            className="md:col-span-5 flex justify-center items-center"
+            className="hidden md:flex justify-center items-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            <div className="relative w-72 h-72">
+            <div className="relative w-full h-[350px] flex items-center justify-center">
               {/* Main circular container */}
               <motion.div 
-                className="absolute inset-0 rounded-full bg-gradient-to-br from-slate-800/90 to-blue-900/70 backdrop-blur-md flex items-center justify-center border border-turquoise/30"
+                className="absolute w-72 h-72 rounded-full border-2 border-turquoise/30 bg-gradient-to-br from-slate-900/80 to-blue-900/50 backdrop-blur-md"
                 animate={{ 
                   boxShadow: ['0 0 15px rgba(51, 195, 240, 0.2)', '0 0 30px rgba(51, 195, 240, 0.4)', '0 0 15px rgba(51, 195, 240, 0.2)'], 
                 }}
@@ -145,7 +144,7 @@ export function Hero() {
               >
                 {/* Central DevOps Logo */}
                 <motion.div 
-                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-turquoise to-classicBlue rounded-full flex items-center justify-center"
+                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-28 h-28 bg-gradient-to-br from-classicBlue to-turquoise rounded-full flex items-center justify-center"
                   animate={{ 
                     scale: [1, 1.05, 1],
                     boxShadow: ['0 0 10px rgba(51, 195, 240, 0.5)', '0 0 20px rgba(51, 195, 240, 0.7)', '0 0 10px rgba(51, 195, 240, 0.5)'],
@@ -162,30 +161,69 @@ export function Hero() {
                   </div>
                 </motion.div>
                 
-                {/* Orbital elements */}
+                {/* Orbital rings with icons */}
                 <motion.div 
-                  className="absolute inset-0 rounded-full"
+                  className="absolute top-0 left-0 w-full h-full"
                   animate={{ rotate: 360 }}
                   transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
                 >
-                  {/* Small orbitals - 4 dots */}
-                  <motion.div className="absolute top-5 left-1/2 transform -translate-x-1/2 w-5 h-5 bg-black rounded-full flex items-center justify-center">
-                    <span className="text-white text-[8px] font-bold opacity-80">CI</span>
+                  {/* Icons positioned around the circle */}
+                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <IconBubble icon={<Code className="h-5 w-5" />} label="Code" />
+                  </div>
+                  <div className="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2">
+                    <IconBubble icon={<GitBranch className="h-5 w-5" />} label="Build" />
+                  </div>
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2">
+                    <IconBubble icon={<CheckCircle className="h-5 w-5" />} label="Test" />
+                  </div>
+                  <div className="absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2">
+                    <IconBubble icon={<Upload className="h-5 w-5" />} label="Deploy" />
+                  </div>
+                </motion.div>
+                
+                {/* Inner orbit with smaller icons */}
+                <motion.div
+                  className="absolute top-1/2 left-1/2 w-40 h-40 rounded-full border border-dashed border-turquoise/20"
+                  style={{ transform: 'translate(-50%, -50%)' }}
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                >
+                  {/* Small orbitals */}
+                  <motion.div 
+                    className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                    whileHover={{ scale: 1.2 }}
+                  >
+                    <div className="h-6 w-6 bg-turquoise/30 backdrop-blur-sm rounded-full flex items-center justify-center">
+                      <Server className="h-3 w-3 text-white" />
+                    </div>
                   </motion.div>
-                  
-                  <motion.div className="absolute right-5 top-1/2 transform -translate-y-1/2 w-5 h-5 bg-black rounded-full flex items-center justify-center">
-                    <span className="text-white text-[8px] font-bold opacity-80">CD</span>
-                  </motion.div>
-                  
-                  <motion.div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 w-5 h-5 bg-black rounded-full flex items-center justify-center">
-                    <span className="text-white text-[8px] font-bold opacity-80">Test</span>
-                  </motion.div>
-                  
-                  <motion.div className="absolute left-5 top-1/2 transform -translate-y-1/2 w-5 h-5 bg-black rounded-full flex items-center justify-center">
-                    <span className="text-white text-[8px] font-bold opacity-80">Build</span>
+                  <motion.div 
+                    className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2"
+                    whileHover={{ scale: 1.2 }}
+                  >
+                    <div className="h-6 w-6 bg-classicBlue/30 backdrop-blur-sm rounded-full flex items-center justify-center">
+                      <BarChart className="h-3 w-3 text-white" />
+                    </div>
                   </motion.div>
                 </motion.div>
+                
+                {/* Flowing particles */}
+                <FlowingParticles />
               </motion.div>
+              
+              {/* Connection lines */}
+              <svg className="absolute w-full h-full z-0" viewBox="0 0 400 400">
+                <defs>
+                  <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="rgba(51, 195, 240, 0.1)" />
+                    <stop offset="50%" stopColor="rgba(51, 195, 240, 0.5)" />
+                    <stop offset="100%" stopColor="rgba(51, 195, 240, 0.1)" />
+                  </linearGradient>
+                </defs>
+                <circle cx="200" cy="200" r="120" fill="none" stroke="url(#lineGradient)" strokeWidth="1" strokeDasharray="5,5" />
+                <circle cx="200" cy="200" r="150" fill="none" stroke="url(#lineGradient)" strokeWidth="1" strokeDasharray="3,3" />
+              </svg>
             </div>
           </motion.div>
         </div>
@@ -195,6 +233,21 @@ export function Hero() {
 }
 
 // Helper components for the enhanced DevOps animation
+const IconBubble = ({ icon, label }: { icon: React.ReactNode, label: string }) => (
+  <motion.div 
+    className="flex flex-col items-center"
+    whileHover={{ scale: 1.1, y: -5 }}
+    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+  >
+    <div className="bg-gradient-to-br from-classicBlue to-turquoise p-[2px] rounded-full">
+      <div className="h-12 w-12 bg-slate-900 backdrop-blur-md rounded-full flex items-center justify-center">
+        {icon}
+      </div>
+    </div>
+    <span className="mt-1 text-xs text-white/80 bg-black/30 backdrop-blur-sm px-2 py-0.5 rounded-full">{label}</span>
+  </motion.div>
+);
+
 const FlowingParticles = () => {
   const particles = Array.from({ length: 6 }, (_, i) => i);
   

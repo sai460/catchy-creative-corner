@@ -18,27 +18,13 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <div id="about">
-          <About />
-        </div>
-        <div id="education">
-          <Education />
-        </div>
-        <div id="experience">
-          <Experience />
-        </div>
-        <div id="skills">
-          <Skills />
-        </div>
-        <div id="projects">
-          <Projects />
-        </div>
-        <div id="testimonials">
-          <Testimonials />
-        </div>
-        <div id="contact">
-          <Contact />
-        </div>
+        <About />
+        <Education />
+        <Experience />
+        <Skills />
+        <Projects />
+        <Testimonials />
+        <Contact />
       </main>
       <footer className="py-8 text-center text-white relative overflow-hidden bg-gradient-to-br from-slate-900 to-blue-900">
         <div className="absolute inset-0 z-0">
