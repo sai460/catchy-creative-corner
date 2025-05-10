@@ -169,6 +169,28 @@ export function Hero() {
                 <div className="text-white font-bold text-sm">Tech Stack</div>
               </motion.div>
 
+<<<<<<< HEAD
+          <motion.div 
+            className="pt-6 flex flex-wrap gap-4"
+            initial="hidden"
+            animate="visible"
+            custom={4}
+            variants={textVariants}
+          >
+            <a href="#contact">
+              <Button variant="default" className="group bg-classicBlue hover:bg-turquoise text-white font-medium px-6 py-6 h-12 rounded-full flex items-center">
+                <UserRound className="mr-2 h-5 w-5" />
+                CONTACT ME
+              </Button>
+            </a>
+            
+            <a href="https://github.com/sai460/resumes/blob/main/Venkata_Sai_Mohan_Yedla_Resume.pdf" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" className="group border-2 border-turquoise text-turquoise hover:bg-turquoise hover:text-white font-medium px-6 py-6 h-12 rounded-full flex items-center">
+                <Download className="mr-2 h-5 w-5" />
+                GET RESUME
+              </Button>
+            </a>
+=======
               {/* Orbiting tech elements */}
               {techStack.map((tech, index) => (
                 <TechOrbit 
@@ -186,6 +208,7 @@ export function Hero() {
               {/* Connecting lines animation */}
               <ConnectingLines />
             </div>
+>>>>>>> 5fb53d1c17597b799a519b4496eefcb85c2b0cef
           </motion.div>
         </div>
       </div>
