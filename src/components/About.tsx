@@ -4,9 +4,10 @@ import { motion } from "framer-motion";
 
 export function About() {
   return (
-    <section id="about" className="py-20 relative overflow-hidden bg-gradient-to-br from-turquoise/5 to-classicBlue/10">
+    <section id="about" className="py-20 relative overflow-hidden bg-gradient-to-br from-slate-900 to-blue-900">
       {/* Background animation elements */}
       <div className="absolute inset-0 z-0">
+        <div className="tech-bg-animation"></div>
         <motion.div 
           className="absolute top-40 right-20 w-80 h-80 rounded-full bg-turquoise/10"
           animate={{
@@ -37,7 +38,7 @@ export function About() {
 
       <div className="container max-w-5xl relative z-10">
         <motion.h2 
-          className="text-3xl font-bold mb-8 text-classicBlue"
+          className="text-3xl font-bold mb-8 text-white drop-shadow-md"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -107,7 +108,7 @@ export function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <motion.p 
-              className="text-foreground"
+              className="text-white"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -116,7 +117,7 @@ export function About() {
               I am a versatile professional with experience as both a Software Engineer and DevOps Engineer. My expertise spans across full-stack development and infrastructure management, allowing me to bridge the gap between development and operations effectively.
             </motion.p>
             <motion.p 
-              className="text-foreground"
+              className="text-white"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -125,7 +126,7 @@ export function About() {
               Throughout my career, I've focused on building scalable applications while implementing efficient CI/CD pipelines and infrastructure automation. I'm passionate about leveraging technology to solve complex problems and improve development workflows.
             </motion.p>
             <motion.p 
-              className="text-foreground"
+              className="text-white"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

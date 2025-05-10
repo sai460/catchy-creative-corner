@@ -4,10 +4,41 @@ import { motion } from "framer-motion";
 
 export function Education() {
   return (
-    <section id="education" className="py-20 bg-gradient-to-br from-white to-secondary/5">
-      <div className="container max-w-5xl">
+    <section id="education" className="py-20 relative overflow-hidden bg-gradient-to-br from-slate-900 to-blue-900">
+      {/* Background animation elements */}
+      <div className="absolute inset-0 z-0">
+        <div className="tech-bg-animation"></div>
+        <motion.div 
+          className="absolute top-40 right-10 w-80 h-80 rounded-full bg-classicBlue/10"
+          animate={{
+            scale: [1, 1.2, 1],
+            y: [0, -20, 0],
+            opacity: [0.2, 0.4, 0.2],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 12,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div 
+          className="absolute bottom-20 left-10 w-60 h-60 rounded-full bg-turquoise/10"
+          animate={{
+            scale: [1.1, 1, 1.1],
+            y: [0, 30, 0],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 10,
+            ease: "easeInOut",
+          }}
+        />
+      </div>
+      
+      <div className="container max-w-5xl relative z-10">
         <div className="flex items-center gap-3 mb-8">
-          <h2 className="text-3xl font-bold text-classicBlue">Education</h2>
+          <h2 className="text-3xl font-bold text-white drop-shadow-md">Education</h2>
           <motion.div
             initial={{ rotate: 0 }}
             animate={{ 
@@ -22,8 +53,8 @@ export function Education() {
             }}
             className="relative"
           >
-            <div className="bg-classicBlue/10 rounded-full p-2">
-              <GraduationCap className="h-8 w-8 text-classicBlue" />
+            <div className="bg-classicBlue/30 rounded-full p-2 backdrop-blur-sm">
+              <GraduationCap className="h-8 w-8 text-white" />
             </div>
             <motion.div 
               className="absolute -top-2 -right-1 w-4 h-4 bg-gold rounded-full"
@@ -60,7 +91,7 @@ export function Education() {
         
         <div className="flex flex-col gap-8">
           <motion.div 
-            className="education-card bg-white/50 p-6 rounded-lg border border-secondary/20 hover:border-classicBlue transition-all duration-300 shadow-sm hover:shadow"
+            className="education-card bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:border-classicBlue transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-classicBlue/10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -68,17 +99,18 @@ export function Education() {
           >
             <div className="flex flex-col md:flex-row md:items-center gap-6">
               <div className="flex-shrink-0">
-                <img 
+                <motion.img 
                   src="/lovable-uploads/d5aab48c-1b81-497f-bb74-4d1d750d8c74.png" 
                   alt="University of New Haven logo" 
                   className="w-24 h-24 object-contain"
+                  whileHover={{ scale: 1.05, rotate: [0, 5, 0, -5, 0], transition: { duration: 0.5 } }}
                 />
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-classicBlue">University Of New Haven</h3>
+                <h3 className="text-xl font-semibold text-white">University Of New Haven</h3>
                 <p className="text-turquoise font-medium">Masters in Computer Engineering</p>
-                <p className="text-muted-foreground mt-1">Aug 2023 - Dec 2024</p>
-                <p className="mt-2 text-sm text-muted-foreground">
+                <p className="text-white/70 mt-1">Aug 2023 - Dec 2024</p>
+                <p className="mt-2 text-sm text-white/60">
                   Once a Charger, Always a Charger
                 </p>
               </div>

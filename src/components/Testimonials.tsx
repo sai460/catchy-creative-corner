@@ -48,11 +48,12 @@ export function Testimonials() {
   ];
 
   return (
-    <section id="testimonials" className="py-20 relative overflow-hidden bg-gradient-to-br from-classicBlue/5 to-gold/5">
+    <section id="testimonials" className="py-20 relative overflow-hidden bg-gradient-to-br from-slate-900 to-blue-900">
       {/* Background animation elements */}
       <div className="absolute inset-0 z-0">
+        <div className="tech-bg-animation"></div>
         <motion.div 
-          className="absolute top-20 right-40 w-60 h-60 rounded-full bg-classicBlue/5"
+          className="absolute top-20 right-40 w-60 h-60 rounded-full bg-classicBlue/10"
           animate={{
             scale: [1, 1.1, 1],
             x: [0, -10, 0],
@@ -66,7 +67,7 @@ export function Testimonials() {
           }}
         />
         <motion.div 
-          className="absolute bottom-20 left-20 w-72 h-72 rounded-full bg-turquoise/5"
+          className="absolute bottom-20 left-20 w-72 h-72 rounded-full bg-turquoise/10"
           animate={{
             scale: [1.1, 1, 1.1],
             opacity: [0.2, 0.4, 0.2],
@@ -87,7 +88,7 @@ export function Testimonials() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold text-classicBlue">Testimonials</h2>
+          <h2 className="text-3xl font-bold text-white drop-shadow-md">Testimonials</h2>
           <motion.div
             initial={{ scale: 1 }}
             animate={{ 
@@ -100,9 +101,9 @@ export function Testimonials() {
               repeatType: "loop",
               ease: "easeInOut"
             }}
-            className="bg-classicBlue/10 rounded-full p-2 shadow-md"
+            className="bg-classicBlue/30 rounded-full p-2 shadow-md backdrop-blur-sm"
           >
-            <Quote className="h-8 w-8 text-classicBlue" />
+            <Quote className="h-8 w-8 text-white" />
           </motion.div>
         </motion.div>
         
@@ -124,7 +125,7 @@ export function Testimonials() {
                 transition: { duration: 0.2 } 
               }}
             >
-              <Card className="h-full bg-white/80 backdrop-blur-sm border-secondary/20 hover:border-classicBlue transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-classicBlue/10">
+              <Card className="h-full bg-white/10 backdrop-blur-sm border-white/20 hover:border-classicBlue transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-classicBlue/10">
                 <CardHeader className="pb-2">
                   <div className="flex items-center gap-4">
                     <motion.div whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}>
@@ -134,18 +135,18 @@ export function Testimonials() {
                       </Avatar>
                     </motion.div>
                     <div>
-                      <CardTitle className="text-lg text-classicBlue">{testimonial.name}</CardTitle>
+                      <CardTitle className="text-lg text-white">{testimonial.name}</CardTitle>
                       <CardDescription className="text-turquoise">{testimonial.position}</CardDescription>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
                   <div className="relative">
-                    <Quote className="absolute top-0 left-0 h-5 w-5 text-classicBlue/20 -translate-x-2 -translate-y-2" />
-                    <p className="text-muted-foreground text-sm pt-2 italic leading-relaxed">
+                    <Quote className="absolute top-0 left-0 h-5 w-5 text-classicBlue/40 -translate-x-2 -translate-y-2" />
+                    <p className="text-white/80 text-sm pt-2 italic leading-relaxed">
                       "{testimonial.message}"
                     </p>
-                    <p className="text-xs text-muted-foreground/70 mt-4 text-right">{testimonial.date}</p>
+                    <p className="text-xs text-white/50 mt-4 text-right">{testimonial.date}</p>
                   </div>
                 </CardContent>
               </Card>

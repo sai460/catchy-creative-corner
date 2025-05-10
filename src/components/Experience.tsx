@@ -4,9 +4,10 @@ import { motion } from "framer-motion";
 
 export function Experience() {
   return (
-    <section id="experience" className="py-20 relative overflow-hidden bg-gradient-to-br from-classicBlue/5 to-turquoise/10">
+    <section id="experience" className="py-20 relative overflow-hidden bg-gradient-to-br from-slate-900 to-blue-900">
       {/* Background animation elements */}
       <div className="absolute inset-0 z-0">
+        <div className="tech-bg-animation"></div>
         <motion.div 
           className="absolute top-20 left-10 w-64 h-64 rounded-full bg-classicBlue/10"
           animate={{
@@ -37,7 +38,7 @@ export function Experience() {
 
       <div className="container max-w-5xl relative z-10">
         <div className="flex items-center gap-3 mb-8">
-          <h2 className="text-3xl font-bold text-classicBlue">Experience</h2>
+          <h2 className="text-3xl font-bold text-white drop-shadow-md">Experience</h2>
           <motion.div
             initial={{ rotate: 0 }}
             animate={{ 
@@ -50,15 +51,15 @@ export function Experience() {
               repeatType: "loop",
               ease: "easeInOut"
             }}
-            className="bg-classicBlue/20 rounded-full p-2 shadow-lg shadow-classicBlue/10"
+            className="bg-classicBlue/30 rounded-full p-2 shadow-lg backdrop-blur-sm"
           >
-            <Briefcase className="h-8 w-8 text-classicBlue" />
+            <Briefcase className="h-8 w-8 text-white" />
           </motion.div>
         </div>
         
         <div className="flex flex-col gap-8">
           <motion.div 
-            className="experience-card bg-white/70 backdrop-blur-sm p-6 rounded-lg border border-secondary/20 hover:border-classicBlue transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-classicBlue/10"
+            className="experience-card bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:border-classicBlue transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-classicBlue/10"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -70,34 +71,34 @@ export function Experience() {
             whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
           >
             <div className="flex flex-col md:flex-row md:items-center gap-6">
-              <div className="flex-shrink-0 p-3 bg-white rounded-lg shadow-sm">
+              <div className="flex-shrink-0 p-3 bg-white/20 rounded-lg shadow-sm backdrop-blur-sm">
                 <motion.img 
                   src="/lovable-uploads/a3cc323c-079d-4570-a214-1d6df16e243d.png" 
                   alt="Wipro Limited logo" 
                   className="w-24 h-24 object-contain"
-                  whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                  whileHover={{ scale: 1.05, rotate: [0, 5, 0, -5, 0], transition: { duration: 0.5 } }}
                 />
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-classicBlue">Wipro Limited</h3>
+                <h3 className="text-xl font-semibold text-white">Wipro Limited</h3>
                 <p className="text-turquoise font-medium">DevOps Engineer</p>
-                <p className="text-muted-foreground mt-1">Aug 2020 - Dec 2024</p>
+                <p className="text-white/70 mt-1">Aug 2020 - Dec 2024</p>
                 <motion.div 
                   className="mt-4 space-y-2"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ delay: 0.3, duration: 0.5 }}
                 >
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-white/80">
                     • Designed and implemented CI/CD pipelines using Jenkins and GitHub Actions
                   </p>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-white/80">
                     • Automated infrastructure provisioning using Terraform and Ansible
                   </p>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-white/80">
                     • Managed Kubernetes clusters and containerized applications with Docker
                   </p>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-white/80">
                     • Implemented monitoring solutions using Prometheus and Grafana
                   </p>
                 </motion.div>

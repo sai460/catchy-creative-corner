@@ -26,8 +26,9 @@ const Index = () => {
         <Testimonials />
         <Contact />
       </main>
-      <footer className="py-8 text-center text-white bg-gradient-to-r from-classicBlue to-turquoise relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
+      <footer className="py-8 text-center text-white relative overflow-hidden bg-gradient-to-br from-slate-900 to-blue-900">
+        <div className="absolute inset-0 z-0">
+          <div className="tech-bg-animation"></div>
           <motion.div 
             className="absolute top-0 left-1/4 w-32 h-32 rounded-full bg-white/10"
             animate={{
