@@ -122,7 +122,7 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* Enhanced DevOps Automation Animation */}
+          {/* Enhanced DevOps Automation Animation - Centered and without process labels */}
           <motion.div 
             className="hidden md:flex justify-center items-center"
             initial={{ opacity: 0 }}
@@ -212,14 +212,6 @@ export function Hero() {
                 <FlowingParticles />
               </motion.div>
               
-              {/* Process labels positioned around */}
-              <div className="absolute w-full h-full">
-                <ProcessLabel text="CI/CD Pipeline" top="5%" left="50%" />
-                <ProcessLabel text="Infrastructure as Code" top="50%" left="85%" />
-                <ProcessLabel text="Monitoring & Logging" top="95%" left="50%" />
-                <ProcessLabel text="Containerization" top="50%" left="15%" />
-              </div>
-              
               {/* Connection lines */}
               <svg className="absolute w-full h-full z-0" viewBox="0 0 400 400">
                 <defs>
@@ -253,23 +245,6 @@ const IconBubble = ({ icon, label }: { icon: React.ReactNode, label: string }) =
       </div>
     </div>
     <span className="mt-1 text-xs text-white/80 bg-black/30 backdrop-blur-sm px-2 py-0.5 rounded-full">{label}</span>
-  </motion.div>
-);
-
-const ProcessLabel = ({ text, top, left }: { text: string, top: string, left: string }) => (
-  <motion.div
-    className="absolute bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full text-xs text-white border border-turquoise/20 shadow-lg whitespace-nowrap"
-    style={{ top, left, transform: 'translate(-50%, -50%)' }}
-    initial={{ opacity: 0, y: 10 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: Math.random() }}
-    whileHover={{ 
-      scale: 1.05, 
-      backgroundColor: 'rgba(51, 195, 240, 0.2)',
-      transition: { duration: 0.2 } 
-    }}
-  >
-    {text}
   </motion.div>
 );
 
