@@ -208,7 +208,7 @@ export function Hero() {
               {/* Connecting lines animation */}
               <ConnectingLines />
             </div>
->>>>>>> 5fb53d1c17597b799a519b4496eefcb85c2b0cef
+{/* >>>>>>> 5fb53d1c17597b799a519b4496eefcb85c2b0cef */}
           </motion.div>
         </div>
       </div>
