@@ -48,13 +48,13 @@
     @apply hover:text-primary transition-colors;
   }
   
-  /* New text highlight utilities */
+  /* Updated text highlight utilities */
   .shadow-text {
     text-shadow: 0 1px 3px rgba(0,0,0,0.8), 0 2px 5px rgba(0,0,0,0.4);
   }
   
   .highlight-text {
-    @apply bg-black/30 backdrop-blur-sm px-2 py-1 rounded;
+    @apply bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded;
   }
 }
 
@@ -291,7 +291,7 @@
   @apply text-classicBlue relative;
 }
 
-/* Button styling */
+/* Updated button styling */
 .contact-button {
   @apply bg-classicBlue hover:bg-turquoise text-white font-medium px-6 py-2 rounded-full transition-all duration-300 flex items-center gap-2;
 }
