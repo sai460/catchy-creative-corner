@@ -58,6 +58,60 @@ export function Experience() {
         </div>
         
         <div className="flex flex-col gap-8">
+          {/* Springer Capital Experience - New */}
+          <motion.div 
+            className="experience-card bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:border-classicBlue transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-classicBlue/10"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ 
+              duration: 0.7,
+              type: "spring",
+              stiffness: 50 
+            }}
+            whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+          >
+            <div className="flex flex-col md:flex-row md:items-center gap-6">
+              <div className="flex-shrink-0 p-3 bg-white/20 rounded-lg shadow-sm backdrop-blur-sm">
+                <motion.img 
+                  src="/lovable-uploads/44c10a70-2d78-44f6-92b5-1c477e743f9d.png" 
+                  alt="Springer Capital logo" 
+                  className="w-24 h-24 object-contain"
+                  whileHover={{ scale: 1.05, rotate: [0, 5, 0, -5, 0], transition: { duration: 0.5 } }}
+                />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-white">Springer Capital</h3>
+                <p className="text-turquoise font-medium">Data Workflow Automation Specialist</p>
+                <p className="text-white/70 mt-1">Mar 2025 - Present</p>
+                <motion.div 
+                  className="mt-4 space-y-2"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: 0.3, duration: 0.5 }}
+                >
+                  <p className="text-white font-medium mb-2">Responsibilities:</p>
+                  <p className="text-sm text-white/80">
+                    • Designed and implemented automated data pipelines using Apache Airflow and AWS Step Functions
+                  </p>
+                  <p className="text-sm text-white/80">
+                    • Developed CI/CD workflows with GitHub Actions for seamless integration of data processing microservices
+                  </p>
+                  <p className="text-sm text-white/80">
+                    • Built and maintained containerized applications using Docker and orchestrated with Kubernetes for scalability
+                  </p>
+                  <p className="text-sm text-white/80">
+                    • Implemented infrastructure as code using Terraform to provision and manage cloud resources
+                  </p>
+                  <p className="text-sm text-white/80">
+                    • Created robust monitoring solutions with Prometheus and Grafana for real-time data pipeline observability
+                  </p>
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Wipro Experience - Updated with header */}
           <motion.div 
             className="experience-card bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:border-classicBlue transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-classicBlue/10"
             initial={{ opacity: 0, y: 50 }}
@@ -89,6 +143,7 @@ export function Experience() {
                   whileInView={{ opacity: 1 }}
                   transition={{ delay: 0.3, duration: 0.5 }}
                 >
+                  <p className="text-white font-medium mb-2">Responsibilities:</p>
                   <p className="text-sm text-white/80">
                     • Designed and implemented CI/CD pipelines using Jenkins and GitHub Actions
                   </p>
