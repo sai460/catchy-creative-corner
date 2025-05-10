@@ -169,7 +169,7 @@ export function Hero() {
                 <div className="text-white font-bold text-sm">Tech Stack</div>
               </motion.div>
 
-<<<<<<< HEAD
+{/* <<<<<<< HEAD
           <motion.div 
             className="pt-6 flex flex-wrap gap-4"
             initial="hidden"
@@ -190,7 +190,7 @@ export function Hero() {
                 GET RESUME
               </Button>
             </a>
-=======
+======= */}
               {/* Orbiting tech elements */}
               {techStack.map((tech, index) => (
                 <TechOrbit 
