@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Download, Github, Linkedin, Mail, UserRound, Server, Code, GitBranch, CheckCircle, Upload, BarChart } from "lucide-react";
+import { ArrowRight, Download, Github, Linkedin, Mail, UserRound, Code, GitBranch, Database, Cloud, Lock, BarChart } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function Hero() {
@@ -39,6 +39,16 @@ export function Hero() {
     })
   };
 
+  // Tech stack for the animation
+  const techStack = [
+    { name: "React", color: "#61DAFB" },
+    { name: "Node.js", color: "#339933" },
+    { name: "Python", color: "#3776AB" },
+    { name: "Docker", color: "#2496ED" },
+    { name: "AWS", color: "#FF9900" },
+    { name: "Kubernetes", color: "#326CE5" }
+  ];
+
   return (
     <section className="min-h-[90vh] flex flex-col justify-center pt-10 pb-20 hero-gradient relative overflow-hidden">
       <div className="absolute inset-0 z-0 bg-gradient-to-r from-slate-900/50 to-blue-900/20"></div>
@@ -47,7 +57,7 @@ export function Hero() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
             <motion.h1 
-              className="text-xl md:text-3xl font-bold bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent shadow-text"
+              className="text-xl md:text-3xl font-bold text-blue-900 shadow-text"
               initial="hidden"
               animate="visible"
               custom={0}
@@ -122,108 +132,59 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* DevOps Automation Animation - Centered */}
+          {/* New Tech Stack 3D Animation */}
           <motion.div 
-            className="hidden md:flex justify-center items-center"
+            className="hidden md:block"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 1 }}
+            transition={{ duration: 1 }}
           >
-            <div className="flex items-center justify-center h-full w-full">
-              {/* Main circular container */}
-              <motion.div 
-                className="relative w-72 h-72 rounded-full border-2 border-turquoise/30 bg-gradient-to-br from-slate-900/80 to-blue-900/50 backdrop-blur-md flex items-center justify-center"
-                animate={{ 
-                  boxShadow: ['0 0 15px rgba(51, 195, 240, 0.2)', '0 0 30px rgba(51, 195, 240, 0.4)', '0 0 15px rgba(51, 195, 240, 0.2)'], 
+            <div className="relative w-full h-80">
+              {/* Background glow */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-turquoise/20 rounded-full blur-2xl"
+                animate={{
+                  scale: [1, 1.05, 1],
+                  opacity: [0.3, 0.4, 0.3],
                 }}
-                transition={{ 
-                  repeat: Infinity, 
-                  duration: 3,
-                  ease: "easeInOut"  
+                transition={{
+                  repeat: Infinity,
+                  duration: 5,
+                  ease: "easeInOut",
                 }}
+              />
+
+              {/* Central hub with connections */}
+              <motion.div
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-gradient-to-br from-blue-600 to-blue-900 rounded-full flex items-center justify-center shadow-lg border border-blue-400/30"
+                animate={{
+                  boxShadow: [
+                    "0 0 20px rgba(59, 130, 246, 0.5)",
+                    "0 0 40px rgba(59, 130, 246, 0.7)",
+                    "0 0 20px rgba(59, 130, 246, 0.5)",
+                  ],
+                }}
+                transition={{ repeat: Infinity, duration: 3 }}
               >
-                {/* Central DevOps Logo */}
-                <motion.div 
-                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-28 h-28 bg-gradient-to-br from-classicBlue to-turquoise rounded-full flex items-center justify-center"
-                  animate={{ 
-                    scale: [1, 1.05, 1],
-                    boxShadow: ['0 0 10px rgba(51, 195, 240, 0.5)', '0 0 20px rgba(51, 195, 240, 0.7)', '0 0 10px rgba(51, 195, 240, 0.5)'],
-                  }}
-                  transition={{ 
-                    repeat: Infinity, 
-                    duration: 3,
-                    ease: "easeInOut"  
-                  }}
-                >
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-white mb-1">DevOps</div>
-                    <div className="text-xs text-white/80">Automation</div>
-                  </div>
-                </motion.div>
-                
-                {/* Orbital rings with icons */}
-                <motion.div 
-                  className="absolute top-0 left-0 w-full h-full"
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                >
-                  {/* Icons positioned around the circle */}
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <IconBubble icon={<Code className="h-5 w-5" />} label="Code" />
-                  </div>
-                  <div className="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2">
-                    <IconBubble icon={<GitBranch className="h-5 w-5" />} label="Build" />
-                  </div>
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2">
-                    <IconBubble icon={<CheckCircle className="h-5 w-5" />} label="Test" />
-                  </div>
-                  <div className="absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2">
-                    <IconBubble icon={<Upload className="h-5 w-5" />} label="Deploy" />
-                  </div>
-                </motion.div>
-                
-                {/* Inner orbit with smaller icons */}
-                <motion.div
-                  className="absolute top-1/2 left-1/2 w-40 h-40 rounded-full border border-dashed border-turquoise/20"
-                  style={{ transform: 'translate(-50%, -50%)' }}
-                  animate={{ rotate: -360 }}
-                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                >
-                  {/* Small orbitals */}
-                  <motion.div 
-                    className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                    whileHover={{ scale: 1.2 }}
-                  >
-                    <div className="h-6 w-6 bg-turquoise/30 backdrop-blur-sm rounded-full flex items-center justify-center">
-                      <Server className="h-3 w-3 text-white" />
-                    </div>
-                  </motion.div>
-                  <motion.div 
-                    className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2"
-                    whileHover={{ scale: 1.2 }}
-                  >
-                    <div className="h-6 w-6 bg-classicBlue/30 backdrop-blur-sm rounded-full flex items-center justify-center">
-                      <BarChart className="h-3 w-3 text-white" />
-                    </div>
-                  </motion.div>
-                </motion.div>
-                
-                {/* Flowing particles */}
-                <FlowingParticles />
+                <div className="text-white font-bold text-sm">Tech Stack</div>
               </motion.div>
+
+              {/* Orbiting tech elements */}
+              {techStack.map((tech, index) => (
+                <TechOrbit 
+                  key={tech.name} 
+                  name={tech.name} 
+                  color={tech.color} 
+                  index={index} 
+                  total={techStack.length} 
+                />
+              ))}
+
+              {/* Floating code snippets */}
+              <CodeSnippets />
               
-              {/* Connection lines */}
-              <svg className="absolute w-full h-full z-0" viewBox="0 0 400 400">
-                <defs>
-                  <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="rgba(51, 195, 240, 0.1)" />
-                    <stop offset="50%" stopColor="rgba(51, 195, 240, 0.5)" />
-                    <stop offset="100%" stopColor="rgba(51, 195, 240, 0.1)" />
-                  </linearGradient>
-                </defs>
-                <circle cx="200" cy="200" r="120" fill="none" stroke="url(#lineGradient)" strokeWidth="1" strokeDasharray="5,5" />
-                <circle cx="200" cy="200" r="150" fill="none" stroke="url(#lineGradient)" strokeWidth="1" strokeDasharray="3,3" />
-              </svg>
+              {/* Connecting lines animation */}
+              <ConnectingLines />
             </div>
           </motion.div>
         </div>
@@ -232,48 +193,122 @@ export function Hero() {
   );
 }
 
-// Helper components for the enhanced DevOps animation
-const IconBubble = ({ icon, label }: { icon: React.ReactNode, label: string }) => (
-  <motion.div 
-    className="flex flex-col items-center"
-    whileHover={{ scale: 1.1, y: -5 }}
-    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-  >
-    <div className="bg-gradient-to-br from-classicBlue to-turquoise p-[2px] rounded-full">
-      <div className="h-12 w-12 bg-slate-900 backdrop-blur-md rounded-full flex items-center justify-center">
-        {icon}
-      </div>
-    </div>
-    <span className="mt-1 text-xs text-white/80 bg-black/30 backdrop-blur-sm px-2 py-0.5 rounded-full">{label}</span>
-  </motion.div>
-);
+// Tech orbiting component
+const TechOrbit = ({ name, color, index, total }: { name: string; color: string; index: number; total: number }) => {
+  const angle = (index / total) * 2 * Math.PI;
+  const radius = 120;
+  const x = Math.cos(angle) * radius;
+  const y = Math.sin(angle) * radius;
+  
+  return (
+    <motion.div
+      className="absolute top-1/2 left-1/2 w-16 h-16 flex items-center justify-center"
+      style={{
+        x: x,
+        y: y,
+      }}
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{
+        opacity: 1, 
+        scale: 1,
+        x: x,
+        y: y,
+        rotate: [0, 360],
+      }}
+      transition={{
+        delay: index * 0.2,
+        duration: 20,
+        rotate: {
+          repeat: Infinity,
+          duration: 15,
+          ease: "linear",
+        },
+        opacity: { duration: 1 }
+      }}
+    >
+      <motion.div
+        className="bg-slate-800 backdrop-blur-md w-full h-full rounded-lg flex items-center justify-center shadow-lg"
+        style={{ borderColor: color }}
+        whileHover={{ scale: 1.2, boxShadow: `0 0 20px ${color}` }}
+        initial={{ borderWidth: 1, borderColor: `${color}40` }}
+        animate={{
+          borderWidth: [1, 2, 1],
+          borderColor: [`${color}40`, `${color}90`, `${color}40`]
+        }}
+        transition={{ repeat: Infinity, duration: 3 }}
+      >
+        <div className="text-white text-sm font-medium">{name}</div>
+      </motion.div>
+    </motion.div>
+  );
+};
 
-const FlowingParticles = () => {
-  const particles = Array.from({ length: 6 }, (_, i) => i);
+// Animated code snippets
+const CodeSnippets = () => {
+  const snippets = [
+    { text: "</>" },
+    { text: "{code}" },
+    { text: "[ ]" }
+  ];
   
   return (
     <>
-      {particles.map((p) => (
+      {snippets.map((snippet, index) => (
         <motion.div
-          key={p}
-          className="absolute top-1/2 left-1/2 w-2 h-2 rounded-full bg-turquoise/80"
+          key={index}
+          className="absolute text-xs text-blue-300 bg-slate-900/60 px-2 py-1 rounded-md backdrop-blur-sm"
           initial={{ 
-            x: 0, 
-            y: 0, 
-            opacity: 0,
-            scale: 0 
+            x: Math.random() * 200 - 100 + 150, 
+            y: Math.random() * 200 - 100 + 150,
+            opacity: 0
           }}
-          animate={{ 
-            x: [0, Math.cos(p * 60 * Math.PI / 180) * 100],
-            y: [0, Math.sin(p * 60 * Math.PI / 180) * 100],
-            opacity: [0, 1, 0],
-            scale: [0, 1, 0]
+          animate={{
+            x: [
+              Math.random() * 200 - 100 + 150,
+              Math.random() * 200 - 100 + 150
+            ],
+            y: [
+              Math.random() * 200 - 100 + 150,
+              Math.random() * 200 - 100 + 150
+            ],
+            opacity: [0, 0.8, 0],
+            scale: [0.8, 1.2, 0.8]
           }}
-          transition={{ 
-            repeat: Infinity, 
-            duration: 4,
-            delay: p * 0.5, 
-            ease: "easeInOut" 
+          transition={{
+            repeat: Infinity,
+            duration: Math.random() * 5 + 10,
+            delay: index * 3
+          }}
+        >
+          {snippet.text}
+        </motion.div>
+      ))}
+    </>
+  );
+};
+
+// Connecting lines animation
+const ConnectingLines = () => {
+  const lines = [1, 2, 3, 4];
+  
+  return (
+    <>
+      {lines.map((line) => (
+        <motion.div
+          key={line}
+          className="absolute top-1/2 left-1/2 h-0.5 bg-gradient-to-r from-blue-500/50 to-transparent origin-left"
+          style={{
+            width: 120,
+            rotate: line * 90,
+          }}
+          animate={{
+            scaleX: [0, 1, 0],
+            opacity: [0, 0.7, 0]
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 3,
+            delay: line * 0.75
           }}
         />
       ))}
