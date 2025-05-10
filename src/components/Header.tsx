@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { Toggle } from "@/components/ui/toggle";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -56,31 +56,36 @@ export function Header() {
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
     >
       <div className="container max-w-5xl flex justify-between items-center">
-        {/* Logo section */}
+        {/* Logo section - Updated to VSM */}
         <motion.div 
           className="flex items-center"
           whileHover={{ scale: 1.05 }}
         >
-          <span className="text-turquoise font-bold text-3xl">TS</span>
+          <div className="bg-gradient-to-br from-classicBlue to-turquoise p-[2px] rounded-lg">
+            <div className="bg-black px-3 py-1.5 rounded-lg flex items-center justify-center">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-turquoise to-classicBlue font-bold text-2xl">VSM</span>
+            </div>
+          </div>
         </motion.div>
 
-        {/* Navigation section */}
-        <div className="rounded-full bg-black/30 backdrop-blur-md border border-white/10 px-8 py-2">
-          <ToggleGroup type="single" value={activeSection}>
+        {/* Updated Navigation section with improved styling */}
+        <div className="bg-black/50 backdrop-blur-md rounded-full shadow-lg border border-turquoise/20 px-2 py-1.5">
+          <div className="flex space-x-1">
             {navItems.map((item) => (
-              <ToggleGroupItem
+              <Toggle
                 key={item.name}
-                value={item.href.substring(1)}
+                variant="navbar"
+                pressed={activeSection === item.href.substring(1)}
                 onClick={() => {
                   const element = document.getElementById(item.href.substring(1));
                   if (element) element.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="text-white/80 hover:text-white px-4 py-1 text-lg data-[state=on]:text-turquoise"
+                className="text-white/80 hover:bg-white/5 px-4 py-2 rounded-full text-sm transition-all duration-200"
               >
                 {item.name}
-              </ToggleGroupItem>
+              </Toggle>
             ))}
-          </ToggleGroup>
+          </div>
         </div>
       </div>
     </motion.header>
